@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Project Template</title>
+
+
+	<style type="text/css">
+		body {
+
+            background-color: #abd5e2;
+
+
+
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 40em;
+			width: 88%;
+		}
+	</style>
+
+</head>
+<body>
+
+	<h1>Playlist Filters</h1>
+
+	<!-- Add filters here -->
+
+    
+
+    <form name = "miForm" onsubmit = "return validarFormulario();">
+
+        <h1>Selecciona el o los generos de musica favoritos</h1>
+
+        <input type="checkbox" onClick="toggle(this)" /> Seleccionar/Deseleccionar todos<br><br>
+
+
+        <input type = "checkbox" name = "genero" id = "genero1">
+        <label for="genero1">Pop</label>
+        <br>
+        <input type = "checkbox" name = "genero" id = "genero2">
+        <label for="genero2">Rock</label>
+        <br>
+        <input type = "checkbox" name = "genero" id = "genero3">
+        <label for="genero3">Hip-Hop</label>
+        <br>
+        <input type = "checkbox" name = "genero" id = "genero4">
+        <label for="genero4">Electronic</label>
+        <br>
+        <input type = "checkbox" name = "genero" id = "genero5">
+        <label for="genero5">Country</label>
+        <br>
+        <!-- <input type = "checkbox" id = "grammy1"> Yes
+        <br>
+        <input type = "checkbox" id = "grammy2"> No
+        <br> -->
+
+        <input type = "button" value = "Consulta" onclick = "verificar()">
+        <!-- <input type = "submit" value = "Consulta" onclick = "verificar()"> -->
+    
+    </form>
+    
+
+	<div id="filters"></div>
+
+	<ol id="playlist">
+		<li data-genre="pop" data-grammy="yes">"Thank U, Next" by Arianna Grande</li>
+		<li data-genre="hip-hop" data-grammy="yes">"Sicko Mode" by Travis Scott</li>
+		<li data-genre="rock" data-grammy="yes">"High Hopes" by Panic! at the Disco</li>
+		<li data-genre="pop" data-grammy="no">"Girls Like You" by Maroon 5</li>
+		<li data-genre="hip-hop" data-grammy="no">"Wow." by Post Malone</li>
+		<li data-genre="hip-hop" data-grammy="no">"Better Now" by Post Malone</li>
+		<li data-genre="hip-hop" data-grammy="no">"Money" by Cardi B</li>
+		<li data-genre="hip-hop" data-grammy="no">"Going Bad" by Meek Mill</li>
+		<li data-genre="pop" data-grammy="yes">"Shallow" by Lady Gaga</li>
+		<li data-genre="rock" data-grammy="no">"Natural" by Imagine Dragons</li>
+		<li data-genre="electronic" data-grammy="no">"Close to Me" by Ellie Goulding</li>
+		<li data-genre="country" data-grammy="yes">"She Got The Best Of Me" by Luke Combs</li>
+		<li data-genre="hip-hop" data-grammy="no">"A Lot" by 21 Savage</li>
+		<li data-genre="country" data-grammy="yes">"Beautiful Crazy" by Luke Combs</li>
+		<li data-genre="country" data-grammy="no">"Burning Man" by Dierks Bentley</li>
+		<li data-genre="hip-hop" data-grammy="no">"Backin' It Up" by Pardison Fontaine</li>
+		<li data-genre="country" data-grammy="yes">"Girl Like You" by Jason Aldean</li>
+		<li data-genre="pop" data-grammy="no">"Consequences" by Camila Cabello</li>
+		<li data-genre="hip-hop" data-grammy="yes">"Talk To Me" by Tory Lanez</li>
+		<li data-genre="hip-hop" data-grammy="yes">"No Stylist" by French Montana</li>
+		<li data-genre="hip-hop" data-grammy="yes">"Yosemite" by Travis Scott</li>
+		<li data-genre="rock" data-grammy="no">"Bad Liar" by Imagine Dragons</li>
+		<li data-genre="rock" data-grammy="no">"Get Up" by Shinedown</li>
+		<li data-genre="pop" data-grammy="yes">"Without Me" by Halsey</li>
+	</ol>
+
+
+	<script>
+		// Project code...
+
+
+
+        function verificar () {
+
+        if (document.getElementById ('genero1').checked){
+            alert("Genero seleccionado Pop, lista de canciones: -Thank U, Next by Arianna Grande, - Girls Like You by Maroon 5, - Shallow by Lady Gaga, - Consequences by Camila Cabello, - Without Me by Halsey");
+        }
+        if (document.getElementById ('genero2').checked){
+            alert("Genero seleccionado Rock, lista de canciones: - High Hopes by Panic! at the Disco, - Natural by Imagine Dragons, - Bad Liar by Imagine Dragons, - Get Up by Shinedown");
+        }
+        if (document.getElementById ('genero3').checked){
+            alert("Genero seleccionado Hip-Hop, lista de canciones: - Sicko Mode by Travis Scott, - Wow. by Post Malone, - Better Now by Post Malone, - Money by Cardi B, - Going Bad by Meek Mill, - A Lot by 21 Savage, - Backin' It Up by Pardison Fontaine, - Talk To Me by Tory Lanez, - No Stylist by French Montana, - Yosemite by Travis Scott");
+        }
+        if (document.getElementById ('genero4').checked){
+            alert("Genero seleccionado Electronic, lista de canciones: - Close to Me by Ellie Goulding");
+        }
+        if (document.getElementById ('genero5').checked){
+            alert("Genero seleccionado Country, lista de canciones: - She Got The Best Of Me by Luke Combs, - Beautiful Crazy by Luke Combs, - Burning Man by Dierks Bentley, - Girl Like You by Jason Aldean");
+        }
+
+    }
+    
+}
+
+
+    function toggle(source) {
+        checkboxes = document.getElementsByName('genero');
+
+        for(var i=0, n=checkboxes.length;i<n;i++) {
+        
+            checkboxes[i].checked = source.checked;
+        }
+
+    }
+
+	</script>
+
+
+
+</body>
+</html>
